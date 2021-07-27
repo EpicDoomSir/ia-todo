@@ -2,24 +2,24 @@
 
 const e = React.createElement;
 
-class LikeButton extends React.Component {
+class ListItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { liked: false };
+    this.state = { removed: false };
   }
 
   render() {
-    if (this.state.liked) {
-      return 'You liked this.';
+    if (this.state.removed) {
+      return 'You removed this.';
     }
 
     return e(
-      'button',
-      { onClick: () => this.setState({ liked: true }) },
-      'Like'
+      'li',
+      { onClick: () => this.setState({ removed: true }) },
+      'to do item'
     );
   }
 }
 
-const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(LikeButton), domContainer);
+const domContainer = document.querySelector('#to_do_container');
+ReactDOM.render(e(ListItem), domContainer);
