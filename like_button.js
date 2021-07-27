@@ -10,7 +10,7 @@ class ListItem extends React.Component {
 
   render() {
     if (this.state.removed) {
-      return 'You removed this.';
+      return '';
     }
 
     return e(
